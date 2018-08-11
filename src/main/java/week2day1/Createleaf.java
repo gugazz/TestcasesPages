@@ -13,7 +13,7 @@ public class Createleaf {
 		// TODO Auto-generated method stub
 
 ChromeOptions obj2=new ChromeOptions();
-obj2.setHeadless(true);
+obj2.setHeadless(false);
 		System.setProperty("webdriver.chrome.driver","./Drivers/chromedriver.exe");
 	ChromeDriver driver=new ChromeDriver(obj2);
 	driver.get("http://leaftaps.com/opentaps");

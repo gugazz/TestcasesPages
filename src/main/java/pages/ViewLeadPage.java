@@ -4,6 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import wdmethods.AnnotationsClass;
 
 public class ViewLeadPage extends AnnotationsClass {
@@ -16,12 +19,13 @@ public class ViewLeadPage extends AnnotationsClass {
 	}
 
 	@FindBy(id="viewLead_firstName_sp")
-	WebElement CreateLeadlink;
-
-	public CreateLeadPage verifyFirstname(String data)
+	WebElement verifyfirstname;
+	@Then("verifys the first name as (.*)")
+	public  ViewLeadPage captureFirstname(String data)
 	{
-		verifyPartialText(CreateLeadlink, data);
-		return new CreateLeadPage();
+		verifyPartialText(verifyfirstname, data);
+	String capturedname=verifyfirstname.getText();
+		return this;
 	}
 	public ViewLeadPage verfyTitleOfPage(String data) throws InterruptedException {
 		verifyTitle(data);
@@ -43,8 +47,12 @@ public class ViewLeadPage extends AnnotationsClass {
 		verifyPartialText(verifycname,datacname);
 		return this;
 	}
+
+
 @FindBy(linkText="Duplicate Lead")
 WebElement duplicatebutton;
+@And ("click on the duplicate lead button")
+
 public DuplicateLeadPage enterduplicatebutton()
 {
 	click(duplicatebutton);
@@ -60,6 +68,8 @@ public DeleteLeadPage enterdeletebutton()
 }
 @FindBy(xpath="//span[@id='viewLead_companyName_sp']")
 WebElement verifycompanynameafterduplication;
+@When ("capture the first name in duplicate page")
+
 public ViewLeadPage verifyduplicatedcompanyname(String dataupdatedcname)
 {
 	verifyExactText(verifycompanynameafterduplication, dataupdatedcname);

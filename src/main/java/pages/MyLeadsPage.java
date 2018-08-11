@@ -40,7 +40,7 @@ public class MyLeadsPage extends AnnotationsClass {
 	
 	public MergeLeadsPage  clickMergeLeadLink()
 	{
-		click(eleFindLeads);
+		click(eleMergeLeads);
 		return new MergeLeadsPage();
 	}
 		

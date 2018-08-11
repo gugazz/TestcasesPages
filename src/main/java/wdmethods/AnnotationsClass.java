@@ -34,7 +34,7 @@ public class AnnotationsClass extends SeMethods {
 	public void beforeMethod(String url,String uname, String pwd)
 	
 	{
-		startTestIteration(iteration);
+		startTestIteration(iteration, authorname, category);
 
 		startApp("chrome", url);
 		WebElement eleUserName = locateElement("id","username");

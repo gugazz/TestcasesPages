@@ -12,8 +12,8 @@ public class TC_003_MergeLead extends AnnotationsClass {
 	@BeforeTest
 	public void setValue()
 	{
-		excelFileName = "CreateLead_1";
-		testCasesName = "TC_001_CreateLead";
+		excelFileName = "MergeLead_1";
+		testCasesName = "TC_003_MergeLead";
 		testCasesDesc = "New lead Creation";
 		category = "smoke";
 		authorname="laks";
@@ -21,25 +21,22 @@ public class TC_003_MergeLead extends AnnotationsClass {
 	}
 
 	@Test(dataProvider="fetchdata")
-	public void createLead(String fromName, String toName, String lname, String phn, String email ) {
+	public void mergeLead(String fromName, String toName ) throws InterruptedException {
 		
-		try {
+	
 			new MyHomePage()
 			.clickLeads()
 			.clickMergeLeadLink()
 			.clickIcon1()
-			.enterFirstName(fromName)
+			.enterFirstName("a")
 			.clickfindleadsButton()
 			.firstresultantleadlinktext()
 			.firstresultantleadlink()
 			.clickIcon2()
-			.enterFirstName(toName)
+			.enterFirstName("b")
 			.clickfindleadsButton()
 			.firstresultantleadlink();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		new MergeLeadsPage()
 		.clickmergebutton()
 		.switchtoalert();

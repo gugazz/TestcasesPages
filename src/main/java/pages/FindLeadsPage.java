@@ -62,7 +62,7 @@ public FindLeadsPage enterphonenumber(String data)
 	public FindLeadsPage FLfirstresultantlead()
 	{
 		click(firstresultantlead);
-		return n;
+		return new FindLeadsPage();
 	}
 	
 	public FindLeadsPage FLfirstresultantleadlinktext()

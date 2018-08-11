@@ -18,7 +18,7 @@ public class FindLeadsPopup extends AnnotationsClass {
 	WebElement firstnameenter;
 	@FindBy(xpath="//button[text()='Find Leads']")
 	WebElement Findleadslink;
-	@FindBy(xpath="(//div[@class='x-grid3-cell-inner x-grid3-col-partyId']/a)[1]")
+	@FindBy(xpath="(//div[@class='x-grid3-cell-inner x-grid3-col-partyId'])[1]")
 	WebElement firstresultantlead;
 	public FindLeadsPopup enterFirstName(String data)
 	{
@@ -37,11 +37,11 @@ public class FindLeadsPopup extends AnnotationsClass {
 	{
 		text = firstresultantlead.getText();
 		System.out.println(text);
-		return this;
+		return new  FindLeadsPopup();
 	}
 	public MergeLeadsPage firstresultantleadlink()
 	{
-		click(firstresultantlead);
+		clickwithoutsnap(firstresultantlead);
 		switchToWindow(0);
 		return new MergeLeadsPage();
 	}

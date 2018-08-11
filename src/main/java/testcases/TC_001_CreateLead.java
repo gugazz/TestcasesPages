@@ -19,7 +19,7 @@ public class TC_001_CreateLead extends AnnotationsClass {
 	}
 
 	@Test(dataProvider="fetchdata")
-	public void createLead(String cname, String fname, String lname, String phn, String email ) {
+	public void createLead(String cname, String fname, String lname ) {
 		
 		new MyHomePage()
 		.clickLeads()
@@ -27,10 +27,8 @@ public class TC_001_CreateLead extends AnnotationsClass {
 		.enterCompanyName(cname)
 		.enterFirstName(fname)
 		.enterLastName(lname)
-		.enterPhoneNumber(phn)
-		.enterMailID(email)
-		.clickSubmit()
-		.verifyFirstname(fname);
+	
+		.clickSubmit();
 		
 	}
 }

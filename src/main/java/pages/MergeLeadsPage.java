@@ -25,7 +25,7 @@ public class MergeLeadsPage extends AnnotationsClass {
 			return new FindLeadsPopup()	;
 		}
 	
-		 @FindBy(xpath="(//img[@alt='Lookup'])[2]")
+		 @FindBy(xpath="//div[contains(text(),'Merge Leads')]/following::a[2]")
 		 WebElement MergeIcon2;
 			
 			public FindLeadsPopup  clickIcon2()
@@ -34,7 +34,7 @@ public class MergeLeadsPage extends AnnotationsClass {
 				switchToWindow(1);
 				return new FindLeadsPopup()	;
 			}
-		@FindBy(xpath="//a[@class='buttonDangerous")
+		@FindBy(xpath="//a[@class='buttonDangerous']")
 		WebElement mergebutton;
 		 public MergeLeadsPage clickmergebutton()
 		 {

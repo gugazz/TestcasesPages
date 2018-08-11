@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import cucumber.api.java.en.Then;
 import wdmethods.AnnotationsClass;
 
 
@@ -79,7 +80,6 @@ public CreateLeadPage verifyErrMsg(String errmsg)
 	verifyExactText(eleerrmsg, errmsg);
 	return this;
 }
-
 public CreateLeadPage verifyfname(String Firstname)
 {
 	verifyExactText(fName, Firstname);

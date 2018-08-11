@@ -19,28 +19,29 @@ public class TC_004_DuplicateLead extends AnnotationsClass {
 	}
 
 	@Test(dataProvider="fetchdata")
-	public void duplicateLead(String phonenumber,String duplicatepagetitle ,String updatedcname ) throws InterruptedException {
-		
+	public void duplicateLead(String email,String data,String title,String updatedcname) throws InterruptedException {
+
 		new MyHomePage()
 		.clickLeads()
 		.clickFindLeadLink()
-.enterphonenumber(phonenumber)		
-.clickfindleadsButton()
+		.EnteremailID(email)
+		.clickfindleadsButton()
 		.firstresultantleadlink()
+		.captureFirstname(data)
 		.enterduplicatebutton()
-		.duplicatettitleverify(duplicatepagetitle)
+		.duplicatettitleverify(title)
 		.createleadbutton()
 		.verifyduplicatedcompanyname(updatedcname)
 		.closecurrentwindow();
 	}
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
 
 }
 
