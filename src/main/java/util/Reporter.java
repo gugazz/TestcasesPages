@@ -5,6 +5,8 @@ package util;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import cucumber.api.Result.Type;
+
 	public  class Reporter {
 		public static ExtentReports extent;
 		public static ExtentTest suiteTest ,test;
@@ -27,7 +29,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 		// This method create entry for every test case iteration
 		//@BeforeMethod
-		public ExtentTest startTestIteration(String iteration) {	
+		public ExtentTest startTestIteration(String iteration,String authorname,String category) {	
 			 test = suiteTest.createNode(iteration);
 			 
 			test.assignAuthor(authorname);
@@ -49,7 +51,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 		}
 
 		// This method create the html report finally
-		public void endResult() {
+		public void endResult( ) {
 			extent.flush();
 		}
 

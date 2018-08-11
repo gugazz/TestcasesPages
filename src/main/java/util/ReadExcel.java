@@ -27,11 +27,16 @@ for(int i=1;i<=RowCount;i++)
 
 for(int j = 0;j<Columncount;j++)
 {
-  XSSFCell cell=row.getCell(j);	
-  
- //String data= cell.getStringCellValue();
-data[i-1][j]=cell.getStringCellValue();
+  try {
+	XSSFCell cell=row.getCell(j);	
+	  
+	 //String data1= cell.getStringCellValue();
+	 data[i-1][j]=cell.getStringCellValue();
+} catch (Exception e) {
+	// TODO Auto-generated catch block
+	 data[i-1][j]="";
 
+}
  System.out.println("read data"+data);
   
   }

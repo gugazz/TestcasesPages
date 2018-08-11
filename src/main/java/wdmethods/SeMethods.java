@@ -22,12 +22,16 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.ITestAnnotation;
 
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import util.Reporter;
 
 public  class SeMethods extends Reporter implements WdMethods{
 	//private static final String value = null;
 	int i = 1;
 	public static RemoteWebDriver driver;
+
 	public void startApp(String browser, String url) {
 		try {
 			if(browser.equals("chrome")) {
